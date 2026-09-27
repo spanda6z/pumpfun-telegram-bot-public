@@ -1,28 +1,42 @@
 # Pump.fun Telegram Bot (Public)
 
-Python single-file Telegram bot for trading Pump.fun tokens via [PumpPortal](https://pumpportal.fun).
+**Public repository** — open source Python Telegram bot for Pump.fun.
 
-## Features
+## Full bot source
 
-- Paste mint \u2192 Buy / Sell buttons
-- Commands: `/start` `/buy` `/sell` `/panic` `/positions` `/wallet` `/settings` `/history` `/invite`
-- Paper trade mode (default)
-- Referral links
-- Activity channel broadcasts on buy/sell
+Complete `single_file_bot.py` (referrals + channel broadcast):
 
-## Quick start
+**https://github.com/spanda6z/pumpfun-telegram-bot/blob/main/python/single_file_bot.py**
+
+If that repo is still **private**, make it public:
+
+1. Open https://github.com/spanda6z/pumpfun-telegram-bot  
+2. **Settings** → **General** → **Danger Zone**  
+3. **Change visibility** → **Make public**
+
+Then:
 
 ```bash
+git clone https://github.com/spanda6z/pumpfun-telegram-bot.git
+cd pumpfun-telegram-bot/python
 pip install -r requirements.txt
 cp .env.example .env
-# fill TELEGRAM_BOT_TOKEN, TELEGRAM_ALLOWED_USER_IDS, WALLET_PRIVATE_KEY, SOLANA_RPC_URL
+# edit .env
 python single_file_bot.py
 ```
 
+## Features
+
+- Paste mint → Buy / Sell buttons
+- Paper trade mode (default)
+- `/invite` referral links
+- Activity channel posts on buy/sell
+- Owner-only trading via `TELEGRAM_ALLOWED_USER_IDS`
+
+## Env
+
+See `.env.example` in this repo.
+
 ## Safety
 
-This can spend real SOL. Keep `PAPER_TRADE=true` until you verify the full flow.
-
-## License
-
-MIT \u2014 use at your own risk.
+Keep `PAPER_TRADE=true` until you verify the flow. Real SOL can be spent.
